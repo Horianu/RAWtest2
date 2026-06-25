@@ -41,10 +41,12 @@ export default function Header() {
               RAW
             </a>
             <div className="hidden lg:flex items-center gap-8 font-display text-sm font-bold uppercase tracking-wide">
-              <a href="#" className="hover:text-raw-lime transition-colors">Shop</a>
-              <a href="#" className="hover:text-raw-cyan transition-colors">Routines</a>
-              <a href="#" className="hover:text-raw-magenta transition-colors">Ingredients</a>
-              <a href="#" className="hover:text-raw-orange transition-colors">Story</a>
+              <a href="#routines" className="hover:text-raw-lime transition-colors">Routines</a>
+              <a href="#how-it-works" className="hover:text-raw-cyan transition-colors">How It Works</a>
+              <a href="#ingredients" className="hover:text-raw-magenta transition-colors">Ingredients</a>
+              <a href="#community" className="hover:text-raw-orange transition-colors">Community</a>
+              <a href="#bundle-builder" className="hover:text-raw-lime transition-colors">Build Stack</a>
+              <a href="#story" className="hover:text-raw-cyan transition-colors">Story</a>
             </div>
           </div>
 

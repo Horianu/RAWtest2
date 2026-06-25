@@ -20,7 +20,7 @@ const articles = [
 
 export default function Education() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-raw-offwhite">
+    <section id="story" className="py-24 px-6 md:px-12 bg-raw-offwhite">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-5xl md:text-7xl font-black mb-16 text-center">Learn to stop over-treating</h2>
         

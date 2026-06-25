@@ -24,7 +24,7 @@ const ingredients = [
 
 export default function IngredientsBand() {
   return (
-    <section className="flex flex-col md:flex-row border-y-4 border-raw-charcoal h-auto md:h-80">
+    <section id="ingredients" className="flex flex-col md:flex-row border-y-4 border-raw-charcoal h-auto md:h-80">
       {ingredients.map((ing, index) => (
         <motion.div
           key={index}

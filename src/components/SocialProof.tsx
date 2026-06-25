@@ -52,7 +52,7 @@ export default function SocialProof() {
   };
 
   return (
-    <section className="py-24 px-6 md:px-12 bg-raw-offwhite border-b-4 border-raw-charcoal relative overflow-hidden">
+    <section id="community" className="py-24 px-6 md:px-12 bg-raw-offwhite border-b-4 border-raw-charcoal relative overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-end justify-between mb-16 gap-8">
         <div>
           <span className="text-sm font-black bg-raw-charcoal text-white px-3 py-1.5 uppercase tracking-widest inline-block mb-4">

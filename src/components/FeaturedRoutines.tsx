@@ -60,7 +60,7 @@ export default function FeaturedRoutines() {
     : kits.filter(k => k.category === activeFilter);
 
   return (
-    <section className="py-24 px-6 md:px-12 bg-raw-offwhite">
+    <section id="routines" className="py-24 px-6 md:px-12 bg-raw-offwhite">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-6xl md:text-8xl font-black mb-4">Pick your RAW routine</h2>

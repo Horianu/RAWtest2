@@ -32,7 +32,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 bg-raw-offwhite overflow-hidden border-b-4 border-raw-charcoal relative">
+    <section id="how-it-works" className="py-24 bg-raw-offwhite overflow-hidden border-b-4 border-raw-charcoal relative">
       <div className="absolute inset-y-0 right-1/4 w-px bg-raw-charcoal/5 pointer-events-none hidden lg:block" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">

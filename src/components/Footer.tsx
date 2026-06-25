@@ -75,7 +75,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto mt-24 flex justify-between items-center text-[10px] uppercase font-bold tracking-widest opacity-30">
         <span>&copy; 2026 RAW SKINCARE STUDIO</span>
-        <span>Built for Online Store 2.0</span>
+        <span>ALL RIGHTS RESERVED</span>
       </div>
     </footer>
   );
