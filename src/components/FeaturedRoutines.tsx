@@ -96,54 +96,67 @@ export default function FeaturedRoutines() {
               className="group relative cursor-pointer"
             >
               {/* Product Card Container */}
-              <div className={`aspect-[3/4] overflow-hidden ${kit.color} border-4 border-raw-charcoal relative shadow-[6px_6px_0px_0px_rgba(26,26,26,1)] group-hover:shadow-[12px_12px_0px_0px_rgba(26,26,26,1)] transition-all`}>
-                <motion.div
-                   whileHover={{ scale: 1.05, rotate: 1 }}
-                   className="w-full h-full"
-                >
-                  <img 
-                    src={kit.image} 
-                    alt={kit.name}
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </motion.div>
+              <div className="relative group">
+                {/* Background Shadow Box (Offset/Asymmetric Layer) */}
+                <div className={`absolute inset-0 bg-raw-charcoal border-4 border-raw-charcoal transform translate-x-3 translate-y-3 group-hover:translate-x-5 group-hover:translate-y-5 transition-transform duration-300`} />
+                
+                <div className={`aspect-[3/4] overflow-hidden ${kit.color} border-4 border-raw-charcoal relative transform group-hover:translate-x-[-2px] group-hover:translate-y-[-2px] transition-transform duration-300`}>
+                  <motion.div
+                     whileHover={{ scale: 1.05, rotate: 0.5 }}
+                     className="w-full h-full"
+                  >
+                    <img 
+                      src={kit.image} 
+                      alt={kit.name}
+                      className="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
+                      referrerPolicy="no-referrer"
+                    />
+                  </motion.div>
 
-                {/* Overlay UI */}
-                <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-raw-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                   <div className="bg-white p-6 border-2 border-raw-charcoal transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                     <h3 className="text-3xl font-black mb-1">{kit.name}</h3>
-                     <p className="text-sm font-medium mb-3 opacity-70">{kit.benefit}</p>
-                     <div className="flex items-center justify-between mb-4">
-                        <span className="text-2xl font-black">{kit.price}€</span>
-                        <div className="flex items-center gap-1">
-                          <Star size={14} fill="currentColor" />
-                          <span className="text-sm font-bold">{kit.rating}</span>
-                        </div>
+                  {/* High Contrast Top Tag */}
+                  <div className="absolute top-4 left-4 bg-raw-charcoal text-white font-display font-black text-xs px-3 py-1 uppercase tracking-wider">
+                    {kit.category}
+                  </div>
+
+                  {/* Overlay UI */}
+                  <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-raw-charcoal/90 via-raw-charcoal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                     <div className="bg-white p-6 border-2 border-raw-charcoal transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                       <h3 className="text-3xl font-black mb-1">{kit.name}</h3>
+                       <p className="text-xs font-medium mb-3 opacity-70 leading-relaxed">{kit.benefit}</p>
+                       <div className="flex items-center justify-between mb-4">
+                          <span className="text-2xl font-black">{kit.price}€</span>
+                          <div className="flex items-center gap-1">
+                            <Star size={14} fill="currentColor" />
+                            <span className="text-sm font-bold">{kit.rating}</span>
+                          </div>
+                       </div>
+                       <button 
+                         onClick={(e) => {
+                           e.stopPropagation();
+                           addToCart({
+                             id: kit.id,
+                             name: kit.name,
+                             price: kit.price,
+                             image: kit.image,
+                             color: kit.color
+                           });
+                         }}
+                         className={`w-full py-3 ${kit.color} border-2 border-raw-charcoal font-display font-black text-lg uppercase tracking-tighter active:scale-95 transition-transform cursor-pointer hover:bg-raw-charcoal hover:text-white transition-colors`}
+                       >
+                         Shop kit
+                       </button>
                      </div>
-                     <button 
-                       onClick={(e) => {
-                         e.stopPropagation();
-                         addToCart({
-                           id: kit.id,
-                           name: kit.name,
-                           price: kit.price,
-                           image: kit.image,
-                           color: kit.color
-                         });
-                       }}
-                       className={`w-full py-3 ${kit.color} border-2 border-raw-charcoal font-display font-black text-lg uppercase tracking-tighter active:scale-95 transition-transform cursor-pointer hover:bg-raw-charcoal hover:text-white transition-colors`}
-                     >
-                       Shop kit
-                     </button>
-                   </div>
+                  </div>
                 </div>
               </div>
 
               {/* Static Label for desktop clarity */}
-              <div className="mt-6 flex justify-between items-center">
-                 <h3 className="text-2xl font-black">{kit.name}</h3>
-                 <span className="text-xl font-bold opacity-60">{kit.price}€</span>
+              <div className="mt-8 flex justify-between items-center px-2">
+                 <div className="flex flex-col">
+                   <h3 className="text-2xl font-black group-hover:text-raw-magenta transition-colors">{kit.name}</h3>
+                   <span className="text-xs font-bold opacity-60 uppercase tracking-widest mt-1">{kit.benefit}</span>
+                 </div>
+                 <span className="text-2xl font-black text-raw-charcoal">{kit.price}€</span>
               </div>
             </motion.div>
           ))}
