@@ -1,6 +1,19 @@
 import { motion } from "motion/react";
+import { useCart } from "../context/CartContext";
 
 export default function BundleBuilder() {
+  const { addToCart } = useCart();
+
+  const handleStartStacking = () => {
+    addToCart({
+      id: "custom-raw-stack",
+      name: "CUSTOM RAW STACK",
+      price: 110,
+      image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800",
+      color: "bg-raw-magenta"
+    });
+  };
+
   return (
     <section className="py-24 px-6 md:px-12 bg-[#f0f0f0] border-b-4 border-raw-charcoal">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
@@ -28,7 +41,8 @@ export default function BundleBuilder() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-raw-charcoal text-white px-12 py-6 font-display font-black text-2xl uppercase tracking-tighter self-start shadow-[6px_6px_0px_0px_#00f3ff]"
+            onClick={handleStartStacking}
+            className="bg-raw-charcoal text-white px-12 py-6 font-display font-black text-2xl uppercase tracking-tighter self-start shadow-[6px_6px_0px_0px_#00f3ff] cursor-pointer"
           >
             Start stacking
           </motion.button>

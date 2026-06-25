@@ -8,22 +8,25 @@ import SocialProof from "./components/SocialProof";
 import BundleBuilder from "./components/BundleBuilder";
 import Education from "./components/Education";
 import Footer from "./components/Footer";
+import { CartProvider } from "./context/CartContext";
 
 export default function App() {
   return (
-    <div className="min-h-screen selection:bg-raw-lime selection:text-raw-charcoal">
-      <Header />
-      <main>
-        <Hero />
-        <PillarsStrip />
-        <FeaturedRoutines />
-        <HowItWorks />
-        <IngredientsBand />
-        <SocialProof />
-        <BundleBuilder />
-        <Education />
-      </main>
-      <Footer />
-    </div>
+    <CartProvider>
+      <div className="min-h-screen selection:bg-raw-lime selection:text-raw-charcoal">
+        <Header />
+        <main>
+          <Hero />
+          <PillarsStrip />
+          <FeaturedRoutines />
+          <HowItWorks />
+          <IngredientsBand />
+          <SocialProof />
+          <BundleBuilder />
+          <Education />
+        </main>
+        <Footer />
+      </div>
+    </CartProvider>
   );
 }
